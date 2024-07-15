@@ -1,0 +1,55 @@
+﻿@page
+@model StudyPlanProject.Pages.CompetenciesTable.IndexModel
+@{
+    ViewData["Title"] = "Компетенция";
+}
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RefBookCompetency[0].Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RefBookCompetency[0].Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RefBookCompetency[0].TypeCode)
+            </th>
+            @*
+                <th>
+                    @Html.DisplayNameFor(model => model.RefBookCompetency[0].ParentId)
+                </th>
+            *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.RefBookCompetency)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeCode)
+                </td>
+                @*
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ParentId)
+                    </td>
+                *@
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

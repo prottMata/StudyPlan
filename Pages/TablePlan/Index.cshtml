@@ -1,0 +1,114 @@
+﻿@page
+@model StudyPlanProject.Pages.TablePlan.IndexModel
+
+@{
+    ViewData["Title"] = "План";
+}
+
+<h1>Plan</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdDiscipNavigation.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdDiscipNavigation.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdSemestrNavigation.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdTypeControlNavigation.CreditUnits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdTypeControlNavigation.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdTypeControlNavigation.Aud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdTypeControlNavigation.Lection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdTypeControlNavigation.Lab)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdTypeControlNavigation.Pract)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdTypeControlNavigation.AttC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdTypeControlNavigation.Aver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdTypeControlNavigation.Control)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdDiscipNavigation.IdCathedraNavigation.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plan[0].IdDiscipNavigation.IdCathedraNavigation.NameCathedra)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Plan) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDiscipNavigation.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDiscipNavigation.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSemestrNavigation.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTypeControlNavigation.CreditUnits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTypeControlNavigation.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTypeControlNavigation.Aud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTypeControlNavigation.Lection)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTypeControlNavigation.Lab)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTypeControlNavigation.Pract)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTypeControlNavigation.AttC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTypeControlNavigation.Aver)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTypeControlNavigation.Control)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDiscipNavigation.IdCathedraNavigation.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDiscipNavigation.IdCathedraNavigation.NameCathedra)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
